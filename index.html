@@ -21,19 +21,15 @@
 
         /* 播放器容器 */
         .player {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 20px;
+            text-align: center;
             width: 90%;
             max-width: 400px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
         }
 
         /* 封面图片 */
         .cover {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 10px;
             margin: 0 auto 20px;
             background: #444;
@@ -48,7 +44,7 @@
 
         /* 播放器标题 */
         .player h1 {
-            font-size: 20px;
+            font-size: 24px;
             margin-bottom: 20px;
             color: #fff;
         }
@@ -89,16 +85,16 @@
         /* 移动端优化 */
         @media (max-width: 600px) {
             .cover {
-                width: 120px;
-                height: 120px;
+                width: 150px; /* 移动端封面稍小 */
+                height: 150px;
             }
 
             .player h1 {
-                font-size: 18px;
+                font-size: 28px; /* 移动端标题更大 */
             }
 
-            .player {
-                padding: 15px;
+            audio {
+                margin-top: 30px; /* 移动端音频控件间距更大 */
             }
         }
     </style>
