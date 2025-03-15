@@ -15,25 +15,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             overflow: hidden;
         }
 
         /* 播放器容器 */
         .player {
-            background: rgba(30, 30, 30, 0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 30px;
+            padding: 20px;
             width: 90%;
             max-width: 400px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(30, 30, 30, 0.1);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
         }
 
         /* 封面图片 */
         .cover {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             border-radius: 10px;
             margin: 0 auto 20px;
             background: #444;
@@ -48,7 +48,7 @@
 
         /* 播放器标题 */
         .player h1 {
-            font-size: 24px;
+            font-size: 20px;
             margin-bottom: 20px;
             color: #fff;
         }
@@ -67,9 +67,9 @@
         }
 
         body.playing {
-            background: linear-gradient(135deg, #1a1a1a, #333, #1a1a1a);
-            background-size: 200% 200%;
-            animation: gradientBackground 5s ease infinite; /* 动画时长从 10s 改为 5s */
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #fbc2eb);
+            background-size: 400% 400%;
+            animation: gradientBackground 5s ease infinite;
         }
 
         /* 提示信息 */
@@ -84,6 +84,22 @@
             font-size: 14px;
             color: #fff;
             display: none; /* 默认隐藏 */
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 600px) {
+            .cover {
+                width: 120px;
+                height: 120px;
+            }
+
+            .player h1 {
+                font-size: 18px;
+            }
+
+            .player {
+                padding: 15px;
+            }
         }
     </style>
 </head>
