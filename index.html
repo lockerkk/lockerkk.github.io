@@ -55,6 +55,32 @@
             margin-top: 20px;
         }
 
+        /* 自定义音频控件样式 */
+        audio::-webkit-media-controls-panel {
+            background: rgba(255, 255, 255, 0.1); /* 控件背景颜色 */
+            border-radius: 10px; /* 圆角 */
+        }
+
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-mute-button {
+            transform: scale(1.5); /* 放大播放和静音按钮 */
+        }
+
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            font-size: 14px; /* 时间显示字体大小 */
+        }
+
+        audio::-webkit-media-controls-timeline {
+            height: 8px; /* 进度条高度 */
+            border-radius: 5px; /* 进度条圆角 */
+        }
+
+        audio::-webkit-media-controls-volume-slider {
+            height: 8px; /* 音量条高度 */
+            border-radius: 5px; /* 音量条圆角 */
+        }
+
         /* 动态背景动画 */
         @keyframes gradientBackground {
             0% { background-position: 0% 50%; }
@@ -95,6 +121,26 @@
 
             audio {
                 margin-top: 30px; /* 移动端音频控件间距更大 */
+            }
+
+            /* 移动端音频控件放大 */
+            audio::-webkit-media-controls-panel {
+                padding: 15px; /* 增加内边距 */
+            }
+
+            audio::-webkit-media-controls-play-button,
+            audio::-webkit-media-controls-mute-button {
+                transform: scale(2); /* 进一步放大播放和静音按钮 */
+            }
+
+            audio::-webkit-media-controls-current-time-display,
+            audio::-webkit-media-controls-time-remaining-display {
+                font-size: 16px; /* 时间显示字体更大 */
+            }
+
+            audio::-webkit-media-controls-timeline,
+            audio::-webkit-media-controls-volume-slider {
+                height: 10px; /* 进度条和音量条更粗 */
             }
         }
     </style>
