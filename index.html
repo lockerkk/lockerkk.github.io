@@ -125,22 +125,22 @@
 
             /* 移动端音频控件放大 */
             audio::-webkit-media-controls-panel {
-                padding: 15px; /* 增加内边距 */
+                padding: 20px; /* 增加内边距 */
             }
 
             audio::-webkit-media-controls-play-button,
             audio::-webkit-media-controls-mute-button {
-                transform: scale(2); /* 进一步放大播放和静音按钮 */
+                transform: scale(2.5); /* 进一步放大播放和静音按钮 */
             }
 
             audio::-webkit-media-controls-current-time-display,
             audio::-webkit-media-controls-time-remaining-display {
-                font-size: 16px; /* 时间显示字体更大 */
+                font-size: 18px; /* 时间显示字体更大 */
             }
 
             audio::-webkit-media-controls-timeline,
             audio::-webkit-media-controls-volume-slider {
-                height: 10px; /* 进度条和音量条更粗 */
+                height: 12px; /* 进度条和音量条更粗 */
             }
         }
     </style>
@@ -153,7 +153,7 @@
         </div>
         <h1>ʕ˶'༥'˶ʔ</h1>
         <!-- 音频控件 -->
-        <audio controls id="audioPlayer">
+        <audio controls id="audioPlayer" loop> <!-- 添加 loop 属性 -->
             <source src="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvYy9hNzc3MjBjYzQ2OWRhOWUzL0VRMzEtbFNGZ1FSRHNmNk0xWHpHdFJ3QmtSdWt3Wk9HdUpib2RSN2FLQUowNEE_ZT1FYWJQZlY.mp3" type="audio/mpeg">
             您的浏览器不支持音频播放
         </audio>
@@ -190,6 +190,14 @@
             // 自动播放失败，显示提示
             playHint.style.display = 'block';
         });
+
+        // 修复时长显示问题
+        audio.addEventListener('loadedmetadata', () => {
+            console.log('音频时长：', audio.duration); // 打印音频时长
+        });
+
+        // 自动循环播放
+        audio.loop = true;
     </script>
 </body>
 </html>
